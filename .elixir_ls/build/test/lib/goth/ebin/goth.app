@@ -1,0 +1,10 @@
+{application,goth,
+             [{applications,[kernel,stdlib,elixir,json_web_token,logger,
+                             httpoison]},
+              {description,"A simple library to generate and retrieve Oauth2 tokens for use with Google Cloud Service accounts.\n"},
+              {modules,['Elixir.Goth','Elixir.Goth.Client',
+                        'Elixir.Goth.Config','Elixir.Goth.Supervisor',
+                        'Elixir.Goth.Token','Elixir.Goth.TokenStore']},
+              {registered,[]},
+              {vsn,"0.6.0"},
+              {mod,{'Elixir.Goth',[]}}]}.
