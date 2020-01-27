@@ -54,6 +54,11 @@ $ iex -S mix
  
  iex(3)> {:ok, file_list} = GoogleApi.Drive.V3.Api.Files.drive_files_list(connection)
 
+# Docs For API
+
+ * ElixirDropbox : https://hexdocs.pm/elixir_dropbox/api-reference.html
+ * GoogleDrive : https://hexdocs.pm/google_api_drive/api-reference.html
+ * Goth : https://hexdocs.pm/goth/api-reference.html
 
 ## Learn more
 
