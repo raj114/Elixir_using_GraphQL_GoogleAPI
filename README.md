@@ -12,45 +12,40 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
 
-Usage for DropBox
+# Usage for DropBox
 $ iex -S mix
-Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+ iex(1)> client = ElixirDropbox.Client.new("TOKEN")
+ iex(2)> ElixirDropbox.Users.current_account(client)
+ iex(3)> ElixirDropbox.Users.current_account_to_struct(client)
+ iex(4)> ElixirDropbox.Files.create_folder(client, "/test")
+ iex(5)> ElixirDropbox.Files.create_folder_to_struct(client, "/test")
 
-Interactive Elixir (1.3.0) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> client = ElixirDropbox.Client.new("TOKEN")
-%ElixirDropbox.Client{access_token: "TOKEN",
- client_id: nil}
-iex(2)> ElixirDropbox.Users.current_account(client)
-iex(3)> ElixirDropbox.Users.current_account_to_struct(client)
-iex(4)> ElixirDropbox.Files.create_folder(client, "/test")
-iex(5)> ElixirDropbox.Files.create_folder_to_struct(client, "/test")
+# Installation For Dropbox
+ If available in Hex, the package can be installed as:
 
-Installation For Dropbox
-If available in Hex, the package can be installed as:
+ Add elixir_dropbox to your list of dependencies in mix.exs:
 
-Add elixir_dropbox to your list of dependencies in mix.exs:
+ def deps do [{:elixir_dropbox, "~> 0.0.7"}] end
 
-def deps do [{:elixir_dropbox, "~> 0.0.7"}] end
+ Ensure elixir_dropbox is started before your application:
 
-Ensure elixir_dropbox is started before your application:
-
-def application do [applications: [:elixir_dropbox]] end
+ def application do [applications: [:elixir_dropbox]] end
 
 
 
-Installation for GoogleApi.Drive
-Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.
+# Installation for GoogleApi.Drive
+ Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.
 
-Install this package from Hex by adding google_api_drive to your list of dependencies in mix.exs:
+ Install this package from Hex by adding google_api_drive to your list of dependencies in mix.exs:
 
-def deps do
-  [{:google_api_drive, "~> 0.10"}]
-end
+ def deps do
+   [{:google_api_drive, "~> 0.10"}]
+ end
 
-Usage of GoogleDrive 
-iex(1)> {:ok, token} = Goth.Token.refresh!("https://www.googleapis.com/auth/drive")
-iex(2)> connection = GoogleApi.Drive.V3.Connection.new(token.token)
-iex(3)> {:ok, file_list} = GoogleApi.Drive.V3.Api.Files.drive_files_list(connection)
+# Usage of GoogleDrive 
+ iex(1)> {:ok, token} = Goth.Token.refresh!("https://www.googleapis.com/auth/drive")
+ iex(2)> connection = GoogleApi.Drive.V3.Connection.new(token.token)
+ iex(3)> {:ok, file_list} = GoogleApi.Drive.V3.Api.Files.drive_files_list(connection)
 
 
 ## Learn more
