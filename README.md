@@ -15,9 +15,13 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 # Usage for DropBox
 $ iex -S mix
  iex(1)> client = ElixirDropbox.Client.new("TOKEN")
+ 
  iex(2)> ElixirDropbox.Users.current_account(client)
+ 
  iex(3)> ElixirDropbox.Users.current_account_to_struct(client)
+ 
  iex(4)> ElixirDropbox.Files.create_folder(client, "/test")
+ 
  iex(5)> ElixirDropbox.Files.create_folder_to_struct(client, "/test")
 
 # Installation For Dropbox
